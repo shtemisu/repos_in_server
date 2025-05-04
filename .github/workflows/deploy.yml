@@ -31,7 +31,7 @@ jobs:
         go build -o tgbot main.go
         kill $(cat /root/repos_in_server/bot.pid) 2>/dev/null || true
         nohup ./repos_in_server > bot.log 2>&1 & echo $! >| bot.pid
-        
+        /root/repos_in_server/tgbot
         # Если нужно перезапустить сервис (пример для systemd)
         # sudo systemctl restart tgbot.service
         EOF
